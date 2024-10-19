@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #fbf9f9;
+}
+
+
+.form-control{
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+    background-color: #fbf9f9;
+    border: solid 2px #dbdbdb;
+}
+.form-style{
+    padding: 3rem 1.5rem 1rem;
+    border-radius: .5rem;
+}
+
+.buttom-style{
+    background-color: rgb(26, 86, 219);
+    border-radius: .5rem;
+    color: white;
+    padding: .5rem 1rem;
+    margin-top: 2.25rem;
+    display: block;
+}
+.error-style{
+    background-color: rgb(248 , 180,180);
+    border-radius: .5rem;
+    width: 100%;
+    padding:.5rem; 
+    text-align: center;
+}
