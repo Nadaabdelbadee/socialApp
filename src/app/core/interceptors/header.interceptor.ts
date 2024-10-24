@@ -7,9 +7,9 @@ export const headerInterceptor: HttpInterceptorFn = (req, next) => {
 
   const _PLATFORM_ID = inject(PLATFORM_ID)
   if (isPlatformBrowser(_PLATFORM_ID)) {
-    if (localStorage.getItem('socialToken') !==null) {
+    if (localStorage.getItem('userToken') !==null) {
       req = req.clone({
-        setHeaders:{token: localStorage.getItem('socialToken') !}
+        setHeaders:{token: localStorage.getItem('userToken') !}
       })
     }
   }

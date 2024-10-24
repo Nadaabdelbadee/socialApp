@@ -1,1 +1,19 @@
-<p>home works!</p>
+<section class="lg:w-1/2 md:w-2/3 mx-auto  m-4  ">
+    @for (post of postList; track $index) {
+        <div class="flex flex-col gap-4 mt-4 bg-white rounded-lg p-5">
+            <div class="w-1/2 flex gap-3">
+                <img [src]="post.user.photo" class="w-10 h-10 rounded-full" alt="profile-Photo">
+                <div>
+                    <h3 class="font-semibold">{{post.user.name}}</h3>
+                    <h4 class="font-thin">{{post.createdAt | date}}</h4>
+                </div>
+            </div>
+            <p>{{post.body}}</p>
+            @if (post.image) {
+            <img [src]="post.image" class="w-full rounded-md" alt="post-Img">
+            }
+            <button class="text-blue-700  self-start">Show Comments</button>
+            <app-comments></app-comments>
+        </div>
+    }
+</section>

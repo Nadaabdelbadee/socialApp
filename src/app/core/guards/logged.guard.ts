@@ -1,15 +1,17 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { retry } from 'rxjs';
 
 export const loggedGuard: CanActivateFn = (route, state) => {
 
   const _Router = inject(Router)
-  if (localStorage.getItem('userToken') !== null) {
-_Router.navigate(['/home'])
-    return false;
-  }
-  else{
-    return true;
-  }
+  if (typeof localStorage !== 'undefined') {
+    if (localStorage.getItem('userToken') !== null) {
+      _Router.navigate(['/home'])
+      return false;
+    }
+    else {
+      return true;
+    }
+  } else return false
+
 };
